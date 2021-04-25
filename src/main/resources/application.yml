@@ -1,0 +1,23 @@
+server:
+    port: 8088
+
+tokopedia:
+    parse:
+        timeout:
+            ms: 10000
+    url: https://www.tokopedia.com/p/handphone-tablet/handphone
+    handphone:
+        name: h1[data-testid=lblPDPDetailProductName]
+        description: div[data-testid=lblPDPDescriptionProduk]
+        imageLink: div[data-testid=PDPImageMain]
+        price: div[data-testid=lblPDPDetailProductPrice]
+        rating: span[data-testid=lblPDPDetailProductRatingNumber]
+        merchant: a[data-testid=llbPDPFooterShopName]
+        searchtags: div[class=css-bk6tzz e1nlzfl3]
+
+#logging configuration
+logging:
+    level:
+        org.springframework: ERROR
+        com.ttj: DEBUG
+    file: ${java.io.tmpdir}/web-scraper.log
